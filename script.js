@@ -4,6 +4,7 @@ const emailInput = document.getElementById("email");
 const successMessage = document.getElementById("success");
 const successEmail = document.getElementById("email-success");
 const formContainer = document.getElementById("form-container");
+const dismissButton = document.getElementById("dismiss-button");
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -25,6 +26,10 @@ const handleSubmit = (e) => {
 document.getElementById("email").addEventListener("focus", function () {
   errorMessage.style.display = "none";
   emailInput.classList.remove("errorBg");
+});
+dismissButton.addEventListener("click", function () {
+  successMessage.classList.add("hidden");
+  formContainer.classList.remove("hidden");
 });
 
 form.addEventListener("submit", handleSubmit);
